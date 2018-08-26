@@ -1,0 +1,53 @@
+<template>
+  <div id="scrambler">
+    {{ sequence }}
+  </div>
+</template>
+
+<script>
+
+const numberOfMovements = 20;
+const movements = ['F','B','R','L','U','D'];
+
+export default {
+  name: 'Scrambler',
+  data: function(){
+    return {
+      sequence:""
+    }
+  },
+  methods:{
+    generate: function(e){
+      console.log('scrambler clicked');
+      this.sequence = " "; //a single space just to compensate the last one that will be inserted in last iteration
+      let movementsInserted = 0;
+      let lastInsertedMovement = -1;
+      while(movementsInserted < numberOfMovements){
+          let movementIndex = Math.floor(Math.random() * movements.length);
+          if(movementIndex !== lastInsertedMovement){
+              if(.5 > Math.random()){
+                this.sequence = this.sequence.concat(`2`);
+              }
+              this.sequence = this.sequence.concat(`${movements[movementIndex]}`);
+              if(.5 > Math.random()){
+                this.sequence = this.sequence.concat(`'`);
+              }
+              this.sequence = this.sequence.concat(` `);
+              lastInsertedMovement = movementIndex;
+              movementsInserted++;
+          }
+      }
+      console.log(this.sequence);
+    }
+  },
+  mounted: function () {
+      document.getElementById('scrambler').addEventListener('click',this.generate);
+      this.generate();
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+
+</style>

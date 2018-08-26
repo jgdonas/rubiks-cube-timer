@@ -1,28 +1,45 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Progress/>
+    <Timer/>
+    <Records/>
+    <Scrambler/> 
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Progress from './components/Progress.vue'
+import Timer from './components/Timer.vue'
+import Records from './components/Records.vue'
+import Scrambler from './components/Scrambler.vue'
+
+const times = [];
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Progress,
+    Timer,
+    Records,
+    Scrambler
+  },
+  provide:{
+      times
   }
 }
 </script>
 
 <style>
+
+body{
+  margin:0px;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
