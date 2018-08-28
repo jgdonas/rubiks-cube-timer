@@ -1,8 +1,13 @@
 import './../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import './../node_modules/mdbvue/build/css/mdb.css'
 import Vue from 'vue'
 import App from './App.vue'
+import BootstrapVue from 'bootstrap-vue'
 import Store from './../store/index' //vuex
+
+Vue.use(BootstrapVue);
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.config.productionTip = false
 
