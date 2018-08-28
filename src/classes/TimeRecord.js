@@ -4,7 +4,7 @@ export default class TimeRecord{
         this.id = Date.now(); //just a way of having a unique id easyly...
         this.timeInMillis = timeInMillis;
         this.formatedTime = this.constructor.formatTime(timeInMillis).string;
-        this.date = new Date();
+        this.date = new Date().toLocaleString();
     }
 
     static compareRecords(a, b){

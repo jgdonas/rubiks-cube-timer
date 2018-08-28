@@ -1,6 +1,7 @@
 <template>
     <div class="table-hover table-responsive h-50 ">
-        <h3>Your records</h3>
+        <h3>Your records  <span class="badge badge-pill  badge-success">{{this.times.length}}</span></h3>
+        <small>(double click on any of them to remove)</small>
         <div id="recordsTable">
             <table class="table">
                 <thead>
@@ -11,10 +12,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(time,index) in times" :key="time.id" >
+                    <tr v-for="(time,index) in times" :key="time.id" @dblclick="removeTime(time.id)">
                         <td>{{ index + 1 }}</td>
-                        <td>{{ time.formatedTime }}</td>
-                        <td>{{ time.date.toLocaleString() }}</td>
+                        <td><h5><span class="badge badge-success">{{ time.formatedTime }}</span></h5></td>
+                        <td>{{ time.date }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -27,7 +28,11 @@ import {mapState} from 'vuex';
 
 export default {
   name: 'Records',
-  methods:{},
+  methods:{
+      removeTime: function(timeId){
+         this.$store.commit('removeTime', timeId);
+      }
+  },
   computed: {
       ...mapState(['times'])
   },
@@ -36,8 +41,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+th{
+    font-weight: 600;
+}
+
 #recordsTable{
     max-width: 400px;
     margin:auto;
 }
+
 </style>
