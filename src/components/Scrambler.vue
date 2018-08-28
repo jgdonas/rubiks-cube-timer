@@ -1,11 +1,13 @@
 <template>
-  <div id="scrambler">
-    {{ sequence }}
-  </div>
+  <footer class="page-footer font-big font-weight-bold text-monospace bg-danger fixed-bottom">
+    <div id="scrambler">
+      <span>Moar scrambling?? Hit meeee!!</span>
+      <h3>{{ sequence }}</h3>
+    </div>
+  </footer>
 </template>
 
 <script>
-
 const numberOfMovements = 20;
 const movements = ['F','B','R','L','U','D'];
 

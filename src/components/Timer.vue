@@ -1,24 +1,34 @@
 <template>
-  <div>
-    {{minutes}}:{{seconds}}.{{millis}}
+  <div id="timer" class="container-fluid">
+      <span class="minutes align-middle">{{formattedTime.minutes}}:</span>
+      <span class="seconds align-middle">{{formattedTime.seconds}}</span>
+      <span class="millis align-middle">.{{formattedTime.millis}}</span>
   </div>
 </template>
 
 <script>
+
+import TimeRecord from './../classes/TimeRecord'
+import {mapState} from 'vuex';
+
 const SPACE = 32;
 
 export default {
   name: 'Timer',
-  inject:['times'],
   data: function(){
     return {
       time: undefined,
       timer: undefined,
       started:false,
-      minutes: "00",
-      seconds: "00",
-      millis: "000"
+      formattedTime:{
+        minutes: "00",
+        seconds: "00",
+        millis: "000"
+      }
     }
+  },
+  computed: {
+    ...mapState(['times'])
   },
   methods:{
     start: function(){
@@ -34,30 +44,17 @@ export default {
     },
     showCurrentTime: function(){
       let elapsedTime = Date.now() - this.time; //milliseconds
-      this.millis = elapsedTime % 1000;
-      elapsedTime -= this.millis;
-      elapsedTime /= 1000; //seconds
-      this.seconds = elapsedTime % 60;
-      elapsedTime -= this.seconds;
-      this.minutes = (elapsedTime % 3600) / 60;
-      this.formatTime();
-    },
-    formatTime : function(){
-      this.seconds = (this.seconds).toString().padStart(2,'0');
-      this.minutes = (this.minutes).toString().padStart(2,'0');
-      this.millis = (this.millis).toString().padEnd(3,'0');
+      this.formattedTime = TimeRecord.formatTime(elapsedTime);
     },
     registerNewTime: function(){
-      let data = {
-        record:`${this.minutes}:${this.seconds}.${this.millis}`, 
-        totalMillis: parseInt(this.minutes) * 60000 + parseInt(this.seconds) * 1000 + parseInt(this.millis),
-        datetime:new Date()
-      }
-      this.times.push(data);
+      let timeInMillis  = parseInt(this.formattedTime.minutes) * 60000 + parseInt(this.formattedTime.seconds) * 1000 + parseInt(this.formattedTime.millis);
+      let timeRecord = new TimeRecord(timeInMillis);
+      this.$store.commit('addTime', timeRecord);
     },
     keymonitor: function(event){
       console.info("key stroke detected");
       if(SPACE === event.keyCode){
+        
         if(this.started){
           this.stop();
           console.info("Timer stopped");
@@ -79,5 +76,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.millis{
+  font-size: 6vw;
+}
+
+.seconds, .minutes{
+  font-size: 12vw;
+}
 
 </style>
