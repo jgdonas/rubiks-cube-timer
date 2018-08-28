@@ -7,7 +7,6 @@
 </template>
 
 <script>
-
 import TimeRecord from './../classes/TimeRecord'
 import {mapState} from 'vuex';
 
@@ -80,16 +79,11 @@ export default {
   },
   created: function () {
     window.addEventListener('keyup', this.keymonitor)
-  },
-  mounted: function(){
-    console.info("Component mounted");
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 .millis{
   font-size: 6vw;
 }
@@ -97,5 +91,4 @@ export default {
 .seconds, .minutes{
   font-size: 12vw;
 }
-
 </style>

@@ -1,13 +1,17 @@
 <template>
     <div class="progress fixed-top" style="height: 20px;">
-        <div class="progress-bar" role="progressbar" v-bind:style="{ width: computeProgress() + '%' }" v-bind:aria-valuenow="computeProgress" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar" 
+             role="progressbar" 
+             v-bind:style="{ width: computeProgress() + '%' }" 
+             v-bind:aria-valuenow="computeProgress" 
+             aria-valuemin="0" 
+             aria-valuemax="100">
+        </div>
     </div>
 </template>
 
 <script>
 import {mapState, mapGetters} from 'vuex';
-
-const SPACE = 32;
 
 export default {
   name: 'Progress',

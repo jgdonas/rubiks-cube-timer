@@ -1,7 +1,12 @@
 <template>
     <div class="table-hover table-responsive h-50 ">
         <h3>Your records  <span class="badge badge-pill  badge-success">{{this.times.length}}</span></h3>
-        <small>(double click on any of them to remove)</small>
+        <b-btn id="info" variant="outline-info">Info</b-btn>
+        <b-tooltip target="info" placement="auto">
+            All you have to do to is click on the timer or hit your space bar before you start solvint it and do it again when you are done! <br>
+            Your records will be automatically stored. If you want to remove any of them, just double click on it!<br>
+            You can keep them as long as you use the same browser, no problem with reloading your tab or closing your browser.
+        </b-tooltip>
         <div id="recordsTable">
             <table class="table">
                 <thead>
@@ -48,6 +53,6 @@ th{
 #recordsTable{
     max-width: 400px;
     margin:auto;
+    margin-top:15px;
 }
-
 </style>

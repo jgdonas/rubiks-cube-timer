@@ -20,7 +20,6 @@ export default {
   },
   methods:{
     generate: function(e){
-      console.log('scrambler clicked');
       this.sequence = " "; //a single space just to compensate the last one that will be inserted in last iteration
       let movementsInserted = 0;
       let lastInsertedMovement = -1;
@@ -49,7 +48,9 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+#scrambler h3{
+  color:white;
+  font-size:1.5em;
+}
 </style>

@@ -3,6 +3,7 @@ export default class TimeRecord{
     constructor(timeInMillis){
         this.id = Date.now(); //just a way of having a unique id easyly...
         this.timeInMillis = timeInMillis;
+        //this is the way to use a static function in a constructor... when object does not exist yet
         this.formatedTime = this.constructor.formatTime(timeInMillis).string;
         this.date = new Date().toLocaleString();
     }
