@@ -1,7 +1,9 @@
 # rubiks-cube-timer
 A rubik's cube timer made with Vue.js and a lot of love.
 
-First of all: please click this link [the app](https://jgdonas-rubiks-cube-timer.herokuapp.com/) so later you'll be able to check it out. The app has been deployed to Heroku, which takes a long time to start the app, so maybe when you finish reading this, it'll be available to you te test it.
+First of all: please click this link [the app](https://jgdonas-rubiks-cube-timer.herokuapp.com/) so later you'll be able to check it out. The app has been deployed to Heroku, which takes a long time to start the app, so maybe when you finish reading this, it'll be available to you te test it. Anyway, this is what the app looks like, just in case you donw want to try it:
+
+![rubiks cube timer snapshot](/snapshots/snapshot2.png)
 
 This is a project used as a challenge for myself, as all I wanted was to learn how to use [**Vue.js**](https://vuejs.org/),
 including [**Vuex**](https://vuex.vuejs.org/), so I can also demonstrate I will able to use it in future projects.
