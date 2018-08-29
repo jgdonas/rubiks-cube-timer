@@ -1,12 +1,16 @@
 # rubiks-cube-timer
-A rubik's cube timer made with Vue.js and a lot of love.
+A rubik's cube timer made with Vue.js and a lot of love (actually, a timer for whatever you want).
 
+<<<<<<< HEAD
 First of all: please click this link [the app](https://jgdonas-rubiks-cube-timer.herokuapp.com/) so later you'll be able to check it out. The app has been deployed to Heroku, which takes a long time to start the app, so maybe when you finish reading this, it'll be available to you te test it. Anyway, this is what the app looks like, just in case you donw want to try it:
 
 ![rubiks cube timer snapshot](/snapshots/snapshot2.png)
+=======
+First of all: please click [this link to the app](https://jgdonas-rubiks-cube-timer.herokuapp.com/) so later you'll be able to check it out. The app has been deployed to Heroku, which takes a long time to start the app, so maybe when you finish reading this, it'll be available for you to test it.
+>>>>>>> cbb0f968d85be5cbb7d132dc934e87c85d4e99c0
 
 This is a project used as a challenge for myself, as all I wanted was to learn how to use [**Vue.js**](https://vuejs.org/),
-including [**Vuex**](https://vuex.vuejs.org/), so I can also demonstrate I will able to use it in future projects.
+including [**Vuex**](https://vuex.vuejs.org/), so I can also demonstrate I will be able to use it in future projects (hello, recruiters of the world).
 
 ## About the timer
 
@@ -27,11 +31,11 @@ As browser [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Windo
 
 ### Classes
 
-1. **TimeRecord.js**: class responsible of records themselves: basically storing the corresponding field and making available a set of utilities to manipulate times, as both string formatted and numerical data.
+1. **TimeRecord.js**: class responsible of records themselves: basically storing the corresponding field and making available a set of utilities to manipulate times, as both formatted string and numerical data.
 
-##Some annotations
+## Some annotations
 
-Deployment to Heroku platform made me install Express as a dependency so I could serve the app as the static bunch of files it is. That's also the reason why my .gitignore file does not include the **/dist** folder: to make Heroku possible to access it as long as that folder is the real app, served as I said, as static files packaged by [webpack](https://webpack.js.org/)
+Deployment to Heroku platform made me install Express as a dependency so I could serve the app as the static bunch of files it is. That's also the reason why my .gitignore file does not include the **/dist** folder: to make Heroku possible to access it as long as that folder is the real app, served as I said, as static files packaged by [webpack](https://webpack.js.org/). Anyway, please notice that neither Express nor including dist folder are necessary in a regular project.
 
 ## Acknowledgments
 
@@ -43,7 +47,7 @@ This project has been made using among many others:
 
 ## Possible improvements:
 
-* A decent design, specially for small devices (to be honest, not my favourite part).
+* A decent design, specially for small devices (to be honest, not my favourite part)
 * Countdown before timer starts (I really don't know how real timers work, though)
 * Cloud storage so times would never be lost.
 * Include tests, CI, etc.
