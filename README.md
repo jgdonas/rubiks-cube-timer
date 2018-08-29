@@ -27,7 +27,7 @@ As browser [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Windo
 
 1. **TimeRecord.js**: class responsible of records themselves: basically storing the corresponding field and making available a set of utilities to manipulate times, as both string formatted and numerical data.
 
-##Some annotations
+## Some annotations
 
 Deployment to Heroku platform made me install Express as a dependency so I could serve the app as the static bunch of files it is. That's also the reason why my .gitignore file does not include the **/dist** folder: to make Heroku possible to access it as long as that folder is the real app, served as I said, as static files packaged by [webpack](https://webpack.js.org/)
 
